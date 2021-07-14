@@ -1,1 +1,1 @@
-# python code goes here
+print("Adventures of Alice")
