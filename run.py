@@ -2,33 +2,35 @@
 # Author : Catriona McDonnell
 
 import time
+from story import story_intro
 
 
-"""
-Introduction to the game and game name
-"""
-print("**************************************************")
-print()
-print("Aventure game that brings you through a Wonderland")
-print("with Alice. Meet fantastic creatures along the way")
-print("and help restore balance to Wonderland by helping")
-print("Alice to slay the Jabberwocky!")
+# """
+# Introduction to the game and game name
+# """
+# print("**************************************************")
+# print()
+# print("Aventure game that brings you through a Wonderland")
+# print("with Alice. Meet fantastic creatures along the way")
+# print("and help restore balance to Wonderland by helping")
+# print("Alice to slay the Jabberwocky!")
 
-print()
-print("    ***************************************")
-print("    *                                     *")
-print("    *             Welcome to              *")
-print("    *                the                  *")
-print("    *         Adventures of Alice         *")
-print("    *                                     *")
-print("    *                                     *")
-print("    ***************************************")
+# print()
+# print("    ***************************************")
+# print("    *                                     *")
+# print("    *             Welcome to              *")
+# print("    *                the                  *")
+# print("    *         Adventures of Alice         *")
+# print("    *                                     *")
+# print("    *                                     *")
+# print("    ***************************************")
 
 
 def game_start():
     """
     Start of game 
     """
+    story_intro()
     while True:
         print()
         player = input("Enter your name here to start the adventure:\n")
@@ -38,6 +40,7 @@ def game_start():
         else:
             break
     print(f"Welcome {player} to the world of Alice")
+
 game_start()
     
-    
+   
