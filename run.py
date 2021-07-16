@@ -1,11 +1,12 @@
 # A text base adventure game called Adventures of Alice
 # Author : Catriona McDonnell
 
+import time
+
 
 """
 Introduction to the game and game name
 """
-print()
 print("**************************************************")
 print()
 print("Aventure game that brings you through a Wonderland")
@@ -28,13 +29,15 @@ def game_start():
     """
     Start of game 
     """
-    print()
-    player = input("Enter your name here to start the adventure:\n")
-    if player == "":
-        print("To play the game you must enter a name !!")
-    else:
-        print(f"Welcome {player} to the world of Alice")
-
+    while True:
+        print()
+        player = input("Enter your name here to start the adventure:\n")
+        if player == "":
+            print("To play the game you must enter a name !!")
+            continue
+        else:
+            break
+    print(f"Welcome {player} to the world of Alice")
 game_start()
     
     
