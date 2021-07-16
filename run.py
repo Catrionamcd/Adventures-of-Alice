@@ -5,27 +5,6 @@ import time
 from story import story_intro
 
 
-# """
-# Introduction to the game and game name
-# """
-# print("**************************************************")
-# print()
-# print("Aventure game that brings you through a Wonderland")
-# print("with Alice. Meet fantastic creatures along the way")
-# print("and help restore balance to Wonderland by helping")
-# print("Alice to slay the Jabberwocky!")
-
-# print()
-# print("    ***************************************")
-# print("    *                                     *")
-# print("    *             Welcome to              *")
-# print("    *                the                  *")
-# print("    *         Adventures of Alice         *")
-# print("    *                                     *")
-# print("    *                                     *")
-# print("    ***************************************")
-
-
 def game_start():
     """
     Start of game 
@@ -39,8 +18,27 @@ def game_start():
             continue
         else:
             break
-    print(f"Welcome {player} to the world of Alice")
+    print()
+    print(f"Welcome {player} to the world of the Adventures of Alice!")
 
 game_start()
-    
-   
+
+def read_storyline():
+    """
+    Read the story text file to print just the section of the story
+    that is relevant
+    """
+    print()
+    story_file = open("story.txt")
+    story_lines = story_file.read()
+    story_file.close()
+    print(story_lines)
+
+def follow_rabbit(): 
+    """
+    Player will have to chose to follow the white rabbit or not
+    by typing in yes or no.
+    """   
+    read_storyline()
+
+follow_rabbit()
