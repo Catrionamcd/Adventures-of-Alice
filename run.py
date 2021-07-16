@@ -1,6 +1,7 @@
 # A text base adventure game called Adventures of Alice
 # Author : Catriona McDonnell
 
+import sys
 import time
 import linecache
 from story import story_intro
@@ -21,8 +22,8 @@ def game_start():
             break
     print()
     print(f"Welcome {player} to the world of the Adventures of Alice!")
+    do_you_follow_rabbit()
 
-game_start()
 
 def read_storyline(line_num, num_of_lines):
     """
@@ -41,10 +42,11 @@ def do_you_follow_rabbit():
     by typing in yes or no.
     """   
     line_num = 0
-    num_of_lines = 7
+    num_of_lines = 8
     read_storyline(line_num, num_of_lines)
 
     while True:
+        print()
         follow_rabbit = input("Do you follow the white rabbit(y/n)?\n").capitalize()
         if follow_rabbit == "Y" or follow_rabbit == "N":
             break
@@ -56,6 +58,8 @@ def do_you_follow_rabbit():
         print("Not following rabbit")
     else:
         print("Following rabbit")
-    
-
-do_you_follow_rabbit()
+ 
+#
+#  The game starts here by running game start function
+#
+game_start()
