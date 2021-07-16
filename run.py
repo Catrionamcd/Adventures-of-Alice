@@ -2,6 +2,7 @@
 # Author : Catriona McDonnell
 
 import time
+import linecache
 from story import story_intro
 
 
@@ -12,7 +13,7 @@ def game_start():
     story_intro()
     while True:
         print()
-        player = input("Enter your name here to start the adventure:\n")
+        player = input("Enter your name here to start the adventure:\n").capitalize()
         if player == "":
             print("To play the game you must enter a name !!")
             continue
@@ -23,22 +24,38 @@ def game_start():
 
 game_start()
 
-def read_storyline():
+def read_storyline(line_num, num_of_lines):
     """
     Read the story text file to print just the section of the story
     that is relevant
     """
     print()
-    story_file = open("story.txt")
-    story_lines = story_file.read()
-    story_file.close()
-    print(story_lines)
-
-def follow_rabbit(): 
+    story_lines = (linecache.getlines('story.txt')[line_num:num_of_lines])
+    for line in story_lines:
+        line = line.strip()
+        print(line)
+    
+def do_you_follow_rabbit(): 
     """
     Player will have to chose to follow the white rabbit or not
     by typing in yes or no.
     """   
-    read_storyline()
+    line_num = 0
+    num_of_lines = 7
+    read_storyline(line_num, num_of_lines)
 
-follow_rabbit()
+    while True:
+        follow_rabbit = input("Do you follow the white rabbit(y/n)?\n").capitalize()
+        if follow_rabbit == "Y" or follow_rabbit == "N":
+            break
+        else:
+            print("You must answer 'Y' or 'N'?")
+            continue            
+
+    if follow_rabbit == "N":
+        print("Not following rabbit")
+    else:
+        print("Following rabbit")
+    
+
+do_you_follow_rabbit()

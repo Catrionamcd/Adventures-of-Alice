@@ -1,7 +1,8 @@
-You find yourself in a beautuful meadow, lounging at the foot of a large oak tree
-You are reading your history lesson with your good friend Alice. Suddenly, a white
-rabbit dashes by, he is wearing a waistcoat and looking at a pocket watch.
+You find yourself in a beautuful meadow, lounging at the foot of a large oak tree.
+You are reading your history lesson with your good friend Alice. 
+
+Suddenly, a white rabbit dashes by.
+He is wearing a waistcoat and looking at a pocket watch.
 
 You hear him say, I'm late, I'm late!!!
 
-Do you and Alice follow him (yes/no)?
