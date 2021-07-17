@@ -5,7 +5,7 @@ def story_intro():
     """
     print("**************************************************")
     print()
-    print("Aventure game that brings you through a Wonderland")
+    print("Adventure game that brings you through a Wonderland")
     print("with Alice. Meet fantastic creatures along the way")
     print("and help restore balance to Wonderland by helping")
     print("Alice to slay the Jabberwocky!")

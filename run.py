@@ -22,11 +22,6 @@ SHEET = GSPREAD_CLIENT.open("Adventures-of-Alice")
 STORY_PROMPT = SHEET.worksheet('AlicePrompt')
 STORY_FLOW = SHEET.worksheet('AliceFlow')
 
-# curr_step = 1
-# data1 = story.get_all_values()[curr_step]
-# data2 = flow.get_all_values()[curr_step]
-
-# print(data1[1])
 
 def game_start():
     """
@@ -43,34 +38,49 @@ def game_start():
             break
     print()
     print(f"Welcome {player} to this world of adventure!")
-    do_you_follow_rabbit()
+    curr_step = 1
+    get_current_step(curr_step)
 
+  
+def get_current_step(curr_step): 
+    """
+    Gets the current step of the game 
+    """   
+    text_prompt = STORY_PROMPT.get_all_values()[curr_step]
+    print(text_prompt[1]) 
 
-# def read_storyline(line_num, num_of_lines):
-#     """
-#     Read the story text file to print just the section of the story
-#     that is relevant
-#     """
-#     print(line_num)
-#     print(num_of_lines)
-#     print()
-#     story_lines = (linecache.getlines('story.txt')[line_num:num_of_lines])
-#     for line in story_lines:
-#         line = line.strip()
-#         print(line)
+    #response = input()
+
+    validate_player_input(curr_step)
 
     
-def do_you_follow_rabbit(): 
-#     """
-#     Player will have to chose to follow the white rabbit or not
-#     by typing in yes or no.
-#     """   
-      curr_step = 1
-      data1 = STORY_PROMPT.get_all_values()[curr_step]
-      data2 = STORY_FLOW.get_all_values()[curr_step]
+def validate_player_input(curr_step):
+    """
+    Validates the players input against the correct reponses
+    from spreadsheet data
+    """
 
-      print(data1[1]) 
+    response = input()
 
+    data2 = STORY_FLOW.get_all_values()
+
+    valid_responses = []
+
+    for item in data2:
+        if item[0].isnumeric():
+            item[0] = int(item[0])
+        else:
+            continue
+
+        if item[0] == curr_step:
+            valid_responses.append(item[1])
+        
+    for item in valid_responses:
+        if response == item:
+            break
+    
+    print(f"Invalid answer, you must enter {valid_responses}") 
+    
 #     line_num = 0
 #     num_of_lines = 8
 #     read_storyline(line_num, num_of_lines)
