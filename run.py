@@ -19,6 +19,9 @@ SHEET = GSPREAD_CLIENT.open("Adventures-of-Alice")
 STORY_PROMPT = SHEET.worksheet('AlicePrompt')
 STORY_FLOW = SHEET.worksheet('AliceFlow')
 
+data_flow = STORY_FLOW.get_all_values()
+
+data2 = data_flow
 
 def game_start():
     """
@@ -50,17 +53,6 @@ def want_new_game():
             return False
 
 
-def get_current_step(curr_step):
-    """
-    Gets the current step of the game
-    """
-
-    text_prompt = STORY_PROMPT.get_all_values()
-    print(text_prompt)
-    print()
-    print(text_prompt[1])
-
-
 def validate_player_input(curr_step):
     """
     Validates the players input against the correct reponses
@@ -68,12 +60,9 @@ def validate_player_input(curr_step):
     """
     player_response = input().upper()
 
-    data2 = STORY_FLOW.get_all_values()
-
     for item in data2:
         if item[0].isnumeric():
-            item[0] = int(item[0])
-            if item[0] == curr_step and player_response == item[1]:
+            if int(item[0]) == curr_step and player_response == item[1]:
                 return item
         else:
             continue
@@ -96,11 +85,25 @@ def main():
     while True:
         game_in_play = True
         curr_step = 1
+        
+        # data2 = get-sublist(curr_step)
+        data2 = list(filter(lambda c: str(c[0]) == str(curr_step), data_flow))
+        if len(data2) == 0:
+            print(f"\nERROR: Data not found for Step {curr_step}")
+            return
 
         while game_in_play:
-            get_current_step(curr_step)
+            # get_current_step(curr_step)
+            all_prompts = STORY_PROMPT.get_all_values()
+            this_prompt = list(filter(lambda c: str(c[0])
+                                      == str(curr_step), all_prompts))
+            if len(this_prompt) != 1:
+                print(f"\nERROR: Data prompt Step {curr_step}")
+                return
+            print()
+            print(this_prompt[0][1])
+            
             item = validate_player_input(curr_step)
-
             if item == None:
                 print("\n** Invalid answer **\n")
                 continue
@@ -110,7 +113,7 @@ def main():
                     print(item[2])  # then print Output column
                 if item[3] == "Win":
                     win_count += 1
-                    print("\nCongratulations, you have won. Order is restored.\n")
+                    print("\nCongratulations, you won. Order is restored.\n")
                     game_in_play = False
                 elif item[3] == "Lose":
                     lose_count += 1
@@ -118,6 +121,11 @@ def main():
                     game_in_play = False
                 else:
                     curr_step = int(item[3])
+                    data2 = list(filter(lambda c: str(c[0]) 
+                                        == str(curr_step), data_flow))
+                    if len(data2) == 0:
+                        print(f"\nERROR: Data not found for Step {curr_step}")
+                        return
 
         if not want_new_game():
             break
@@ -127,4 +135,3 @@ def main():
 
 
 main()
-
