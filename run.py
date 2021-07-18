@@ -49,8 +49,6 @@ def get_current_step(curr_step):
     text_prompt = STORY_PROMPT.get_all_values()[curr_step]
     print(text_prompt[1]) 
 
-    #response = input()
-
     validate_player_input(curr_step)
 
     
@@ -60,53 +58,39 @@ def validate_player_input(curr_step):
     from spreadsheet data
     """
 
-    player_response = input()
+    player_response = input().upper()
 
     data2 = STORY_FLOW.get_all_values()
+    print(data2)
 
-    valid_response_list = []
-
+    valid_response = False
+        
     for item in data2:
         if item[0].isnumeric():
             item[0] = int(item[0])
+            if item[0] == curr_step and player_response == item[1]:
+                curr_step = item[3]
+                valid_response = True
+                print(item[3])
+                break
         else:
             continue
 
-        if item[0] == curr_step:
-            valid_response_list.append(item[1])
     
-    valid_reponse = False
-    for item in valid_response_list:
-        print(item)
-        if player_response == item:
-            valid_reponse = True
-            break
+
+    #     if item[0] == curr_step:
+    #         valid_response_list.append(item[1])
+    
+    # valid_reponse = False
+    # for item in valid_response_list:
+    #     if player_response == item:
+    #         valid_reponse = True
+    #         break
+
+    if not valid_response:    
+        print(f"Invalid answer, you must enter")     
         
-    if not valid_reponse:    
-        print(f"Invalid answer, you must enter {valid_response_list}")     
-        
     
-# def hole_in_tree():
-#     """
-#     Player and Alice fall through hole in the tree and land
-#     in a strange room with three doors/three options.
-#     """
-#     line_num = 9
-#     num_of_lines = 13
-#     read_storyline(line_num, num_of_lines)
-    
-#     print()
-#     door_choice = input("Which door should you choose(1, 2, 3)?\n")
-#     if door_choice == 1:
-#         print("Door 1")
-#     elif door_choice == 2:
-#         print("Door 2")
-#     elif door_choice == 3:
-#         print("Door 3")
-#     else:
-#         print("Invalid choice, you must enter 1, 2 or 3")
-     
- 
 #
 #  The game starts here by running game start function
 #
