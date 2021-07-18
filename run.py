@@ -60,11 +60,11 @@ def validate_player_input(curr_step):
     from spreadsheet data
     """
 
-    response = input()
+    player_response = input()
 
     data2 = STORY_FLOW.get_all_values()
 
-    valid_responses = []
+    valid_response_list = []
 
     for item in data2:
         if item[0].isnumeric():
@@ -73,33 +73,19 @@ def validate_player_input(curr_step):
             continue
 
         if item[0] == curr_step:
-            valid_responses.append(item[1])
-        
-    for item in valid_responses:
-        if response == item:
+            valid_response_list.append(item[1])
+    
+    valid_reponse = False
+    for item in valid_response_list:
+        print(item)
+        if player_response == item:
+            valid_reponse = True
             break
+        
+    if not valid_reponse:    
+        print(f"Invalid answer, you must enter {valid_response_list}")     
+        
     
-    print(f"Invalid answer, you must enter {valid_responses}") 
-    
-#     line_num = 0
-#     num_of_lines = 8
-#     read_storyline(line_num, num_of_lines)
-
-#     while True:
-#         print()
-#         follow_rabbit = input("Do you follow the white rabbit(Y/N)?\n").capitalize()
-#         if follow_rabbit == "Y" or follow_rabbit == "N":
-#             break
-#         else:
-#             print("You must answer 'Y' or 'N'?")
-#             continue            
-
-#     if follow_rabbit == "N":
-#         print("Not following rabbit")
-#     else:
-#         hole_in_tree()
-
-
 # def hole_in_tree():
 #     """
 #     Player and Alice fall through hole in the tree and land
