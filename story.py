@@ -19,3 +19,12 @@ def story_intro():
     print("    *                                     *")
     print("    *                                     *")
     print("    ***************************************")
+    print()
+
+    print ("               *           *")
+    print ("              * *         * *")
+    print ("             *   *       *   *")
+    print ("            *     *     *     *")
+    print ("           *      *     *      *")
+    print ("           *       *''''*      *")
+    print ("            *                 *")

@@ -50,6 +50,7 @@ def want_new_game():
         if play_again == "Y":
             return True
         else:
+            print("Thanks for playing, I hope you enjoyed it!")
             return False
 
 
@@ -102,7 +103,7 @@ def main():
                 return
             print()
             print(this_prompt[0][1])
-            
+
             item = validate_player_input(curr_step)
             if item == None:
                 print("\n** Invalid answer **\n")
