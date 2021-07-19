@@ -109,12 +109,12 @@ def main():
                 print("\n** Invalid answer **\n")
                 continue
             else:
-                if not item[2] == "":        # if output column not blank
+                if not item[2] == "":   # if output column not blank
                     print()
-                    print(item[2])  # then print Output column
+                    print(item[2])      # then print Output column
                 if item[3] == "Win":
                     win_count += 1
-                    print("\nCongratulations, you won. Order is restored.\n")
+                    print("\nCongratulations, Order is restored to Wonderland.\n")
                     game_in_play = False
                 elif item[3] == "Lose":
                     lose_count += 1
