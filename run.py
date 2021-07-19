@@ -19,6 +19,7 @@ SHEET = GSPREAD_CLIENT.open("Adventures-of-Alice")
 STORY_PROMPT = SHEET.worksheet('AlicePrompt')
 STORY_FLOW = SHEET.worksheet('AliceFlow')
 
+all_prompts = STORY_PROMPT.get_all_values()
 data_flow = STORY_FLOW.get_all_values()
 
 data2 = data_flow
@@ -86,16 +87,13 @@ def main():
     while True:
         game_in_play = True
         curr_step = 1
-        
-        # data2 = get-sublist(curr_step)
+
         data2 = list(filter(lambda c: str(c[0]) == str(curr_step), data_flow))
         if len(data2) == 0:
             print(f"\nERROR: Data not found for Step {curr_step}")
             return
 
         while game_in_play:
-            # get_current_step(curr_step)
-            all_prompts = STORY_PROMPT.get_all_values()
             this_prompt = list(filter(lambda c: str(c[0])
                                       == str(curr_step), all_prompts))
             if len(this_prompt) != 1:
