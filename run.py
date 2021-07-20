@@ -24,6 +24,7 @@ data_flow = STORY_FLOW.get_all_values()
 
 data2 = data_flow
 
+
 def game_start():
     """
     Start of game
@@ -47,7 +48,6 @@ def want_new_game():
         if play_again != "Y" and play_again != "N":
             print("Invalid answer, please enter Y or N")
             continue
-        
         if play_again == "Y":
             return True
         else:
@@ -103,7 +103,7 @@ def main():
             print(this_prompt[0][1])
 
             item = validate_player_input(curr_step)
-            if item == None:
+            if item is None:
                 print("\n** Invalid answer **\n")
                 continue
             else:
@@ -112,7 +112,7 @@ def main():
                     print(item[2])      # then print Output column
                 if item[3] == "Win":
                     win_count += 1
-                    print("\nCongratulations, Order is restored to Wonderland.\n")
+                    print("\nCongratulations, Order is restored.\n")
                     game_in_play = False
                 elif item[3] == "Lose":
                     lose_count += 1
