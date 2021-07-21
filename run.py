@@ -32,7 +32,8 @@ def game_start():
     story_intro()
     while True:
         print()
-        player = input("Enter your name here to start the adventure:\n").capitalize()
+        player = input(
+            "Enter your name here to start the adventure:\n").capitalize()
         if player == "":
             print("To play the game you must enter a name !!")
             continue
@@ -120,17 +121,20 @@ def main():
                     game_in_play = False
                 else:
                     curr_step = int(item[3])
-                    data2 = list(filter(lambda c: str(c[0]) 
+                    data2 = list(filter(lambda c: str(c[0])
                                         == str(curr_step), data_flow))
                     if len(data2) == 0:
                         print(f"\nERROR: Data not found for Step {curr_step}")
                         return
 
+        print(f"\nYou have won {win_count} games so far!!")
+        print(f"You have lost {lose_count} games so far!!")
+
         if not want_new_game():
             break
 
-        print(f"\nYou have won {win_count} games so far!!")
-        print(f"You have lost {lose_count} games so far!!")
+#        print(f"\nYou have won {win_count} games so far!!")
+#        print(f"You have lost {lose_count} games so far!!")
 
 
 main()
