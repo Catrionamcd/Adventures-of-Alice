@@ -22,7 +22,8 @@ STORY_FLOW = SHEET.worksheet('AliceFlow')
 all_prompts = STORY_PROMPT.get_all_values()
 data_flow = STORY_FLOW.get_all_values()
 
-data2 = data_flow
+# data2 = data_flow
+data2 = []
 
 
 def game_start():
@@ -62,7 +63,6 @@ def validate_player_input(curr_step):
     from spreadsheet data
     """
     player_response = input().upper()
-
     for item in data2:
         if item[0].isnumeric():
             if int(item[0]) == curr_step and player_response == item[1]:
@@ -89,17 +89,29 @@ def main():
         game_in_play = True
         curr_step = 1
 
-        data2 = list(filter(lambda c: str(c[0]) == str(curr_step), data_flow))
+        global data2
+
+        for row in data_flow:
+            if str(row[0]) == str(curr_step):
+                data2.append(row)
+        # data2 = list(filter(lambda c: str(c[0]) == str(curr_step), data_flow))
+
         if len(data2) == 0:
             print(f"\nERROR: Data not found for Step {curr_step}")
             return
 
         while game_in_play:
-            this_prompt = list(filter(lambda c: str(c[0])
-                                      == str(curr_step), all_prompts))
+            # this_prompt = list(filter(lambda c: str(c[0])
+            #                         == str(curr_step), all_prompts))
+            this_prompt = []
+            for prompt in all_prompts:
+                if str(prompt[0]) == str(curr_step):
+                    this_prompt.append(prompt)
+
             if len(this_prompt) != 1:
                 print(f"\nERROR: Data prompt Step {curr_step}")
                 return
+
             print()
             print(this_prompt[0][1])
 
@@ -120,15 +132,24 @@ def main():
                     print("\nHard luck, better luck next time\n")
                     game_in_play = False
                 else:
-                    curr_step = int(item[3])
-                    data2 = list(filter(lambda c: str(c[0])
-                                        == str(curr_step), data_flow))
+                    curr_step = int(item[3])  # current step becomes next step
+                    for row in data_flow:
+                        if str(row[0]) == str(curr_step):
+                            data2.append(row)
+            #        data2 = list(filter(lambda c: str(c[0])
+            #                            == str(curr_step), data_flow))
                     if len(data2) == 0:
                         print(f"\nERROR: Data not found for Step {curr_step}")
                         return
 
-        print(f"\nYou have won {win_count} games so far!!")
-        print(f"You have lost {lose_count} games so far!!")
+        if win_count < 2:
+            print(f"\nYou have won {win_count} game so far!!")
+        else:
+            print(f"\nYou have won {win_count} games so far!!")
+        if lose_count < 2:
+            print(f"You have lost {lose_count} game so far!!")
+        else:
+            print(f"You have lost {lose_count} games so far!!")
 
         if not want_new_game():
             break
