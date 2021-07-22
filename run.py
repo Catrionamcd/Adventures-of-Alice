@@ -42,6 +42,7 @@ def game_start():
             break
 
     print(f"\nWelcome {player} to this world of adventure!")
+    return player
 
 
 def want_new_game():
@@ -83,7 +84,7 @@ def main():
     win_count = 0
     lose_count = 0
 
-    game_start()
+    player = game_start()
 
     while True:
         game_in_play = True
@@ -117,7 +118,7 @@ def main():
 
             item = validate_player_input(curr_step)
             if item is None:
-                print("\n** Invalid answer **\n")
+                print("\n***** Invalid answer *****\n")
                 continue
             else:
                 if not item[2] == "":   # if output column not blank
@@ -129,7 +130,7 @@ def main():
                     game_in_play = False
                 elif item[3] == "Lose":
                     lose_count += 1
-                    print("\nHard luck, better luck next time\n")
+                    print(f"\nHard luck {player}, better luck next time\n")
                     game_in_play = False
                 else:
                     curr_step = int(item[3])  # current step becomes next step
@@ -143,9 +144,9 @@ def main():
                         return
 
         if win_count < 2:
-            print(f"\nYou have won {win_count} game so far!!")
+            print(f"\n{player}, you have won {win_count} game so far!!")
         else:
-            print(f"\nYou have won {win_count} games so far!!")
+            print(f"\n{player}, you have won {win_count} games so far!!")
         if lose_count < 2:
             print(f"You have lost {lose_count} game so far!!")
         else:
@@ -154,8 +155,6 @@ def main():
         if not want_new_game():
             break
 
-#        print(f"\nYou have won {win_count} games so far!!")
-#        print(f"You have lost {lose_count} games so far!!")
 
-
+# Running the main function
 main()
