@@ -15,13 +15,8 @@ story.txt
 ## Features/Functions
 
 
-
-
 ## Future Features 
 
-A section that describes all 18 holes on the golf course. A video to showcase the whole course.
-
-A section for booking tee times for members of the club.
 
 ## Technology
 
@@ -64,7 +59,7 @@ In the buildpacks section, where further necessary dependencies are installed, c
 Deployment
 In the top menu bar select 'Deploy'.
 In the 'Deployment method' section select 'Github' and click the connect to Github button to confirm.
-In the 'search' box enter the Github repository name for the project. Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository which in this case is After the Party.
+In the 'search' box enter the Github repository name for the project. Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository which in this case is Adventures of Alice.
 Scroll down to select either automatic or manual deployment. For this project automatic deployment was selected. If you wish to select automatic deployment select the button 'Enable Automatic Deploys'. This will rebuild the app every time a change is pushed to Github. If you wish to manually deploy click the button 'Deploy Branch'. The default 'Master' option in the dropdown menu should be selected in both cases.
 When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser. The live deployment of the project can be seen here
 The app starts automatically and can be restarted by pressing the 'Run Program' button.
