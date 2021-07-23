@@ -3,10 +3,13 @@
 The Adventures of Alice is a text based adventure game. The game is based on the story of Alice's Adventures in Wonderland and Through the Looking glass by Lewis Carroll. The player is taken through a land of wonder and meets many fantastic creatures along the way. The aim of the game is to find the Vorpal sword and slay the Jabberwocky, a fierce dragon like creature, who along with the Queen of Hearts has control over Wonderland. There is a short introduction to the game and the player is asked to enter their name. The player is asked a series of questions. Depending on how they answer these questions they will go through a series of different adventures and may or may not slay the Jabberwocky and restore order to Wonderland.
 
 
-![alt text](assets/documentation/multi-device.png)
+![alt text](assets/images/Adventures-Screen1.png)
 
 
 ## Design of the game
+
+![alt text](assets/images/Adventures-Flowchart.png)
+
 story.txt
 ## Data Model
 ### Development of Data Model
