@@ -1,45 +1,97 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Adventures of Alice
 
-Welcome Catrionamcd,
+The Adventures of Alice is a text based adventure game. The game is based on the story of Alice's Adventures in Wonderland and Through the Looking glass by Lewis Carroll. The player is taken through a land of wonder and meets many fantastic creatures along the way. The aim of the game is to find the Vorpal sword and slay the Jabberwocky, a fierce dragon like creature, who along with the Queen of Hearts has control over Wonderland. There is a short introduction to the game and the player is asked to enter their name. The player is asked a series of questions. Depending on how they answer these questions they will go through a series of different adventures and may or may not slay the Jabberwocky and restore order to Wonderland.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-## Gitpod Reminders
+![alt text](assets/documentation/multi-device.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Design of the game
+story.txt
+## Data Model
+### Development of Data Model
+### Flowchart
 
-A blue button should appear to click: *Make Public*,
+## Features/Functions
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+## Future Features 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+A section that describes all 18 holes on the golf course. A video to showcase the whole course.
 
-## Updates Since The Instructional Video
+A section for booking tee times for members of the club.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Technology
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Languages Used
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Python3
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Framework, Libraries, Programs Used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* GitPod - Git was used for version control by utilizing the Gitpod terminal to add and commit changes with messages to Git and Push to GitHub.
+* GitHub - used to store the project code.
+* Heroku - used to deploy and run the project.
+* Google Sheets - used to store the story flow, the story content, story prompts and the next steps for the game. 
+* Diagrams - used to create the flowchart for the project.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+PEP8 online check
+http://pep8online.com
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* No errors were found in the code 
 
---------
+## Deployment
+Deployment
+The application uses Heroku for deployement
 
-Happy coding!
+To create the application:
+First create the requirements file the Heroku will use to import the dependencies required for deployment: type pip3 freeze > requirements.txt. 
+
+Navigate to the Heroku website
+create an account by entering your email address and a password
+Activate the account through the authentication email sent to your email account
+Click the new button and select create a new app from the dropdown menu
+Enter a name for the application which must be unique, in this case the app name is after-the-party
+Select a region, in this case Europe
+Click create app
+Heroku settings
+From the horizontal menu bar select 'Settings'.
+In the buildpacks section, where further necessary dependencies are installed, click 'add buildpack'. Select 'Python' first and click 'save changes'. Next click 'node.js' and then click 'save changes' again. The 'Python' buildpack must be above the 'node.js' buildpack'. They can be clicked on and dragged to change the order if necessary.
+Deployment
+In the top menu bar select 'Deploy'.
+In the 'Deployment method' section select 'Github' and click the connect to Github button to confirm.
+In the 'search' box enter the Github repository name for the project. Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository which in this case is After the Party.
+Scroll down to select either automatic or manual deployment. For this project automatic deployment was selected. If you wish to select automatic deployment select the button 'Enable Automatic Deploys'. This will rebuild the app every time a change is pushed to Github. If you wish to manually deploy click the button 'Deploy Branch'. The default 'Master' option in the dropdown menu should be selected in both cases.
+When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser. The live deployment of the project can be seen here
+The app starts automatically and can be restarted by pressing the 'Run Program' button.
+
+Forking the Repository
+If you wish to fork the repository to make changes without affecting the original you can fork the repository
+
+Navigate to the adventures-of-alice repository
+Click the 'Fork' button at the top right of the page.
+A forked copy of the repository will appear in your Repositories page.
+Cloning the Repository
+On GitHub navigate to the main page of the repository.
+Above the list of files click the dropdown code menu.
+Select the https option and copy the link.
+Open the terminal.
+Change the current working directory to the desired destination location.
+Type the git clone command with the copied URL: git clone https://github.com/catrionamcd/adventures-of-alice.git.
+
+Press enter to create the local clone.
+
+## Credits
+
+* Adventures of Alice in Wonderland by Lewis Carroll
+* Through the looking glass by Lewis Carroll
+* Disney movies - Alice in Wonderland 1951 & 2010
+               
+
+
+
+
