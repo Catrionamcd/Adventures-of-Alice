@@ -14,6 +14,17 @@ The Adventures of Alice is a text based adventure game. The game is based on the
 ### Future Features 
 ## Data Model
 
+This game uses Google sheets to store all the data for the game. The Adventures-of-Alice sheet is comprised of two sheets. The AlicePrompt sheet stores two values, Step and User Prompt. The value in Step is numeric and represents where the player is in the game. The User Prompt holds the story content and the prompt which are both printed to the screen.
+
+![alt text](assets/images/Google-Sheet1.png)
+
+The second sheet, AliceFlow, also stores the Step. The Step values should correspond to the values stored in the Step field in AlicePrompt. It also holds Response, which holds all the possible valid answers that the player may enter for the step that they are at in the game. The next value stored is Output, which will hold the possible outcome for what the player has chosen to enter. And finally, AliceFlow sheet stores the Next Step, which stores the next step of the game depending on how the player answered.
+
+![alt text](assets/images/Google-Sheet2.png)
+
+The next step can be a numeric value but can also hold a Win or Lose value, which will end the game. The link for a copy of the Adventures Of Alice google sheets is below:
+https://docs.google.com/spreadsheets/d/1bUZLqS3Y8-wCncuKFJdtRpnGloQ8lo0SaEltfV9jUIk/edit?usp=sharing
+
 ### Development of Data Model
 
 When I first approached this project and decided to do a text based adventure game I wanted the text and story content to be separate from my Python code. I wanted to store my data separately to be opened, read and manipulated by the code but not hard coded into my program.
