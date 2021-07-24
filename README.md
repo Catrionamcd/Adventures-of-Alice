@@ -19,7 +19,7 @@ and they are asked to enter their name to start their adventure. If a name is no
 ![alt text](assets/images/NameError-Screen.png)
 
 * If a players name is entered, the method capitalize is used to format the name entered and it is printed in a welcome statement. 
-* The first step in the story begins. The player is presented with an option to follow the follow the white rabbit. The function will get all values from the google sheets data.
+* The first step in the story begins. The player is presented with an option to follow the white rabbit. The function will get all values from the google sheets data.
 * It will create a sublist of the values needed to validate the input from the player.
 * It will return the data of output and next step for the current step in the google sheet.
 
@@ -33,11 +33,24 @@ and they are asked to enter their name to start their adventure. If a name is no
 * A tally of the players wins and losses is accumulated and displayed to the player at the end of each game.
 * The player is also given the option to play again.
 
+This shows one of the possible wins.
+
 ![alt text](assets/images/Adventures-Screen4.png)
+
+This shows one of the possibe losses.
 
 ![alt text](assets/images/Adventures-Screen5.png)
 
+* Functionality to validate the data in the data structure, google sheets. For example, if a next step is missing in the google sheets, the program  will output an error to alert the user that the data is missing or compromised.
 
+
+![alt text](assets/images/Data-Error-Screen.png)
+
+### Use of Python 
+
+While coding this game I intially used a for loop to loop through the list of data I retreived from the google sheets to create a sublist of the data that I needed for validation and to get the next step. Using google I discovered a more powerful pythonic way of doing this in just one line. These are screen shots of my code as I had it before putting in the lambda method.
+
+![alt text](assets/images/Code-with-loop.png)
 
 ### Future Features 
 * The game could be extended to hold numerous stories. The player could be presented with a menu of different adventures to play. The different adventure stories could be stored in different Google Sheets.
