@@ -28,7 +28,7 @@ If a name is not entered a message will be displayed to inform the player that t
 * If a players name is entered, the capitalize() method is used to format the name entered and it is printed in a welcome statement. 
 * The first step in the story begins. The player is presented with an option to follow the white rabbit. The function will get all values from the Google Sheets data.
 * It will create a sublist of the values needed to validate the input from the player.
-* It will return the output for the current step and the value ofthe next the next step.
+* It will return the output for the current step and the value of the next the next step.
 
 ![alt text](assets/images/Adventures-Screen2.png)
 
@@ -37,7 +37,7 @@ If a name is not entered a message will be displayed to inform the player that t
 ![alt text](assets/images/Adventures-Screen3.png)
 
 * In the current data model there are seven ways to lose the game and two different ways to win. This is configurable.
-* A tally of the players wins and losses is accumulated and displayed to the player at the end of each game.
+* A tally of the players wins and losses are accumulated and displayed to the player at the end of each game.
 * The player is also given the option to play again.
 
 This shows one of the possible wins.
@@ -56,7 +56,7 @@ This shows one of the possibe losses.
 
 ### Use of Python 
 
-While coding this game I intially used a for loop to loop through the list of data that had been retreived from the Google Sheets. This loop would create a sublist of the data that was needed for validation and to get the next step. Using google I discovered a more powerful pythonic way of doing this in just one line. These are screen shots of my code as I had it before putting in the lambda function.
+While coding this game I intially used a for loop to loop through the list of data that had been retreived from the Google Sheets. This loop would create a sublist of the data that was needed for validation and to get the next step. Using google I discovered a more powerful pythonic way of doing this in just one line using a lambda function. These are screen shots of my code as I had it before putting in the lambda function.
 
 ![alt text](assets/images/Code-with-loop.png)
 
@@ -112,6 +112,7 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 * [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game.
 * [Google Sheets](https://www.google.com/sheets/about/) - used to store the story flow, the story content, story prompts and the next steps for the game. 
 * [Diagrams](https://wwww.diagrams.net) - used to create the flowchart for the project.
+## API
 
 ## Testing
 
@@ -142,29 +143,29 @@ http://pep8online.com
 * hadnt populated the requirments.txt file in my repository.
 
 ## Deployment
-Deployment
+
 The application uses Heroku for deployement
 
-To create the application:
-First create the requirements file the Heroku will use to import the dependencies required for deployment: type pip3 freeze > requirements.txt. 
+### Create the application
+1. Create the requirements file the Heroku will use to import the dependencies required for deployment: type pip3 freeze > requirements.txt. 
 
-Navigate to the Heroku website
-create an account by entering your email address and a password
-Activate the account through the authentication email sent to your email account
-Click the new button and select create a new app from the dropdown menu
-Enter a name for the application which must be unique, in this case the app name is after-the-party
-Select a region, in this case Europe
-Click create app
-Heroku settings
-From the horizontal menu bar select 'Settings'.
-In the buildpacks section, where further necessary dependencies are installed, click 'add buildpack'. Select 'Python' first and click 'save changes'. Next click 'node.js' and then click 'save changes' again. The 'Python' buildpack must be above the 'node.js' buildpack'. They can be clicked on and dragged to change the order if necessary.
-Deployment
-In the top menu bar select 'Deploy'.
-In the 'Deployment method' section select 'Github' and click the connect to Github button to confirm.
-In the 'search' box enter the Github repository name for the project. Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository which in this case is Adventures of Alice.
-Scroll down to select either automatic or manual deployment. For this project automatic deployment was selected. If you wish to select automatic deployment select the button 'Enable Automatic Deploys'. This will rebuild the app every time a change is pushed to Github. If you wish to manually deploy click the button 'Deploy Branch'. The default 'Master' option in the dropdown menu should be selected in both cases.
-When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser. The live deployment of the project can be seen here
-The app starts automatically and can be restarted by pressing the 'Run Program' button.
+2. Navigate to the [Heroku](https://heroku.com) website
+3. Create an account by entering your email address and a password
+4. Activate the account through the authentication email sent to your email account
+5. Click the new button and select create a new app from the dropdown menu
+6. Enter a name for the application which must be unique, in this case the app name is adventures-of-alice
+7. Select a region, in this case Europe
+8. Click create app
+## Heroku settings
+1. From the horizontal menu bar select 'Settings'.
+2. In the buildpacks section, where further necessary dependencies are installed, click 'add buildpack'. Select 'Python' first and click 'save changes'. Next click 'node.js' and then click 'save changes' again. The 'Python' buildpack must be above the 'node.js' buildpack'. They can be clicked on and dragged to change the order if necessary.
+### Deployment
+1. In the top menu bar select 'Deploy'.
+2. In the 'Deployment method' section select 'Github' and click the connect to Github button to confirm.
+3. In the 'search' box enter the Github repository name for the project. Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository which in this case is [Adventures of Alice](https://github.com/catrionamcd/adventures-of-alice).
+4. Scroll down to select either automatic or manual deployment. For this project automatic deployment was selected. If you wish to select automatic deployment select the button 'Enable Automatic Deploys'. This will rebuild the app every time a change is pushed to Github. If you wish to manually deploy click the button 'Deploy Branch'. The default 'Master' option in the dropdown menu should be selected in both cases.
+5. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser. The live deployment of the project can be seen here
+6. The app starts automatically and can be restarted by pressing the 'Run Program' button.
 
 ## Forking the Repository
 If you wish to fork the repository to make changes without affecting the original you can fork the repository
@@ -197,7 +198,7 @@ Press enter to create the local clone.
 * [python] - https://docs.python.org
 
 * I would like to credit my mentor Maria Hynes who kept me informed and advised me with my approach to the python code and my README. She also enlisted members of her own family to play/test my game and give feedback.
-* I would also like to credit my own family for testing the game over and over on their laptops and phones. They all enjoyed both the original animated version of the Disney movie and the more recent Tim Burton adaptation. 
+* I would also like to credit my own family for testing the game over and over on their laptops and phones. They all enjoyed both the original animated version of the Disney movie and the more recent Disney/Tim Burton adaptation. 
 
 
 
