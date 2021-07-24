@@ -19,11 +19,11 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("Adventures-of-Alice")
-#
+
 # Googlesheet with two pages, one for the story content
 # and prompts. The other for the valid answers, possible
 # outputs and the next step
-#
+
 STORY_PROMPT = SHEET.worksheet('AlicePrompt')
 STORY_FLOW = SHEET.worksheet('AliceFlow')
 
@@ -86,7 +86,7 @@ def validate_player_input(curr_step):
     input from the player in reponse to the story prompt. It validates
     the players input against the correct reponses from the second
     page of spreadsheet data - Alice Flow. It will return the item
-    of data that corresponds to the valid input or it will retun None.
+    of data that corresponds to the valid input or it will return None.
     """
     player_response = input().upper()
     for item in data2:
@@ -99,9 +99,6 @@ def validate_player_input(curr_step):
     return None
 
 
-#
-#  The game starts here by running game start function
-#
 def main():
     """
     This function runs all program functions. The current step will
@@ -122,31 +119,30 @@ def main():
         game_in_play = True
         curr_step = 1
 
-        for row in data_flow:
-            if str(row[0]) == str(curr_step):
-                data2.append(row)
-        # data2 = list(filter(lambda c: str(c[0])
-        #                     == str(curr_step), data_flow))
+        # Create a sublist data2 of the current step from data flow
+        data2 = list(filter(lambda c: str(c[0])
+                            == str(curr_step), data_flow))
 
+        # Check if data exists in sublist, print error if not
         if len(data2) == 0:
             print(f"\nERROR: Data not found for Step {curr_step}")
             return
 
         while game_in_play:
-            # this_prompt = list(filter(lambda c: str(c[0])
-            #                         == str(curr_step), all_prompts))
-            this_prompt = []
-            for prompt in all_prompts:
-                if str(prompt[0]) == str(curr_step):
-                    this_prompt.append(prompt)
+            # Create sublist of story content & prompt of current step
+            # to be printed to screen
+            this_prompt = list(filter(lambda c: str(c[0])
+                                      == str(curr_step), all_prompts))
 
             if len(this_prompt) != 1:
                 print(f"\nERROR: Data prompt Step {curr_step}")
                 return
-
+            # Print story content and prompt to player
             print()
             print(this_prompt[0][1])
 
+            # Run function to validate player input and return output
+            # and next step for game
             item = validate_player_input(curr_step)
             if item is None:
                 print("\n***** Invalid answer *****\n")
@@ -164,12 +160,9 @@ def main():
                     print(f"\nHard luck {player}, better luck next time\n")
                     game_in_play = False
                 else:
-                    curr_step = int(item[3])  # current step becomes next step
-                    for row in data_flow:
-                        if str(row[0]) == str(curr_step):
-                            data2.append(row)
-            #        data2 = list(filter(lambda c: str(c[0])
-            #                            == str(curr_step), data_flow))
+                    curr_step = int(item[3])  # next step move to current step
+                    data2 = list(filter(lambda c: str(c[0])
+                                        == str(curr_step), data_flow))
                     if len(data2) == 0:
                         print(f"\nERROR: Data not found for Step {curr_step}")
                         return

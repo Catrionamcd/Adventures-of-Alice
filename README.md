@@ -7,23 +7,18 @@ The Adventures of Alice is a text based adventure game. The game is based on the
 
 
 ## Design of the game
-
-![alt text](assets/images/Adventures-Flowchart.png)
-
-story.txt
-## Data Model
-### Development of Data Model
 ### Flowchart
+![alt text](assets/images/Adventures-Flowchart.png)
+story.txt
 
 ## Features/Functions
-
-
-## Future Features 
-
+### Existing Features
+### Future Features 
+## Data Model
+### Development of Data Model
 
 ## Technology
-
-### Languages Used
+### Language Used
 
 * Python3
 
