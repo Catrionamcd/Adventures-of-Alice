@@ -5,18 +5,24 @@ The Adventures of Alice is a text based adventure game. The game is based on the
 
 ![alt text](assets/images/Adventures-Screen1.png)
 
-
 ## Design of the game
 ### Flowchart
 ![alt text](assets/images/Adventures-Flowchart.png)
-story.txt
 
 ## Features/Functions
 ### Existing Features
 ### Future Features 
 ## Data Model
+
 ### Development of Data Model
 
+When I first approached this project and decided to do a text based adventure game I wanted the text and story content to be separate from my Python code. I wanted to store my data separately to be opened, read and manipulated by the code but not hard coded into my program.
+
+I experimented by using a txt file, called story.txt in my gitpod repository. I initially use the open file, readlines, close file code in my program but then after some research discovered linecache.getlines module and used this to read certain lines from the text file depending on where the player was in the story by using parameters of the file name and line number. The code is below:
+
+![alt text](assets/images/LineCache-Code.png)
+
+After reviewing the love Sandwiches mini project, I felt it may be better to used Google Sheets to store the story line and content. I also realised that  I could also used it to store the valid answers to each player prompt, the output and the next step of the game. Hence, I discarded my original idea of using a text file to store and read in the relevant lines.
 ## Technology
 ### Language Used
 
@@ -34,6 +40,7 @@ story.txt
 
 PEP8 online check
 http://pep8online.com
+![alt text](assets/images/PEP8-Checker.png)
 
 * No errors were found in the code 
 
