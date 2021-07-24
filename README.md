@@ -21,7 +21,7 @@ and they are asked to enter their name to start their adventure. If a name is no
 * If a players name is entered, the method capitalize is used to format the name entered and it is printed in a welcome statement. 
 * The first step in the story begins. The player is presented with an option to follow the white rabbit. The function will get all values from the google sheets data.
 * It will create a sublist of the values needed to validate the input from the player.
-* It will return the data of output and next step for the current step in the google sheet.
+* It will return the data of output and next step to become the current step in the google sheet.
 
 ![alt text](assets/images/Adventures-Screen2.png)
 
@@ -48,15 +48,24 @@ This shows one of the possibe losses.
 
 ### Use of Python 
 
-While coding this game I intially used a for loop to loop through the list of data I retreived from the google sheets to create a sublist of the data that I needed for validation and to get the next step. Using google I discovered a more powerful pythonic way of doing this in just one line. These are screen shots of my code as I had it before putting in the lambda method.
+While coding this game I intially used a for loop to loop through the list of data that had been retreived from the google sheets. This loop would create a sublist of the data that was needed for validation and to get the next step. Using google I discovered a more powerful pythonic way of doing this in just one line. These are screen shots of my code as I had it before putting in the lambda method.
 
 ![alt text](assets/images/Code-with-loop.png)
+
+These are the two websites I read to achieve this goal :
+
+https://www.pythontutorial.net/python-basics/python-filter-list/
+
+https://www.analyticsvidhya.com/blog/2020/03/what-are-lambda-functions-in-python/
+
 
 ### Future Features 
 * The game could be extended to hold numerous stories. The player could be presented with a menu of different adventures to play. The different adventure stories could be stored in different Google Sheets.
 * An extra sheet could be updated to store the players name and tally of wins/losses.
 * The game could have more options and extra scenarios to make it more interesting and complex. More characters from the original story, such as Tweedledee and Tweedledum could have been added.
 * Art, maybe ASCII art, could be used to display the many iconic symbols associated with Alice in Wonderland, such as, a potions bottle, a drink me or eat me label, the Mad Hatters top hat perhaps.
+
+
 ## Data Model
 
 This game uses Google sheets to store all the data for the game. The Adventures-of-Alice sheet is comprised of two sheets. The AlicePrompt sheet stores two values, Step and User Prompt. The value in Step is numeric and represents where the player is in the game. The User Prompt holds the story content and the prompt which are both printed to the screen.
