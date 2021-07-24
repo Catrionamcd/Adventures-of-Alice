@@ -120,8 +120,8 @@ def main():
         curr_step = 1
 
         # Create a sublist data2 of the current step from data flow
-        data2 = list(filter(lambda c: str(c[0])
-                            == str(curr_step), data_flow))
+        data2 = list(filter(lambda c: str(c[0]) ==
+                            str(curr_step), data_flow))
 
         # Check if data exists in sublist, print error if not
         if len(data2) == 0:
@@ -131,8 +131,8 @@ def main():
         while game_in_play:
             # Create sublist of story content & prompt of current step
             # to be printed to screen
-            this_prompt = list(filter(lambda c: str(c[0])
-                                      == str(curr_step), all_prompts))
+            this_prompt = list(filter(lambda c: str(c[0]) ==
+                                      str(curr_step), all_prompts))
 
             if len(this_prompt) != 1:
                 print(f"\nERROR: Data prompt Step {curr_step}")
@@ -161,8 +161,8 @@ def main():
                     game_in_play = False
                 else:
                     curr_step = int(item[3])  # next step move to current step
-                    data2 = list(filter(lambda c: str(c[0])
-                                        == str(curr_step), data_flow))
+                    data2 = list(filter(lambda c: str(c[0]) ==
+                                        str(curr_step), data_flow))
                     if len(data2) == 0:
                         print(f"\nERROR: Data not found for Step {curr_step}")
                         return
