@@ -2,8 +2,9 @@
 
 The Adventures of Alice is a text based adventure game. The game is based on the story of Alice's Adventures in Wonderland and Through the Looking glass by Lewis Carroll. The player is taken through a land of wonder and meets many fantastic creatures along the way. The aim of the game is to find the Vorpal sword and slay the Jabberwocky, a fierce dragon like creature, who along with the Queen of Hearts has control over Wonderland. There is a short introduction to the game and the player is asked to enter their name. The player is asked a series of questions. Depending on how they answer these questions they will go through a series of different adventures and may or may not slay the Jabberwocky and restore order to Wonderland.
 
-
+## Multi Screen mock-up of the game
 ![alt text](assets/images/Adventures-MultiScreen.png)
+![alt text](assets/images/Adventures-Screen1.png)
 
 ## Design of the game
 ### Flowchart
@@ -12,9 +13,37 @@ The Adventures of Alice is a text based adventure game. The game is based on the
 ## Features/Functions
 ### Existing Features
 
+* The player is presented with a screen that gives an introduction to the game
+and they are asked to enter their name to start their adventure. If a name is not entered a message will be displayed to inform the player that to play the game they must enter a name. This function will continue to loop until a players name is entered.
+
+![alt text](assets/images/NameError-Screen.png)
+
+* If a players name is entered, the method capitalize is used to format the name entered and it is printed in a welcome statement. 
+* The first step in the story begins. The player is presented with an option to follow the follow the white rabbit. The function will get all values from the google sheets data.
+* It will create a sublist of the values needed to validate the input from the player.
+* It will return the data of output and next step for the current step in the google sheet.
+
+![alt text](assets/images/Adventures-Screen2.png)
+
+* If the input data does not exist as a valid response for the current step in the game, an error message will be displayed and the player will have to enter the correct response to continue.
+
+![alt text](assets/images/Adventures-Screen3.png)
+
+* There are seven ways to lose the game and two different ways to win.
+* A tally of the players wins and losses is accumulated and displayed to the player at the end of each game.
+* The player is also given the option to play again.
+
+![alt text](assets/images/Adventures-Screen4.png)
+
+![alt text](assets/images/Adventures-Screen5.png)
+
+
+
 ### Future Features 
 * The game could be extended to hold numerous stories. The player could be presented with a menu of different adventures to play. The different adventure stories could be stored in different Google Sheets.
 * An extra sheet could be updated to store the players name and tally of wins/losses.
+* The game could have more options and extra scenarios to make it more interesting and complex. More characters from the original story, such as Tweedledee and Tweedledum could have been added.
+* Art, maybe ASCII art, could be used to display the many iconic symbols associated with Alice in Wonderland, such as, a potions bottle, a drink me or eat me label, the Mad Hatters top hat perhaps.
 ## Data Model
 
 This game uses Google sheets to store all the data for the game. The Adventures-of-Alice sheet is comprised of two sheets. The AlicePrompt sheet stores two values, Step and User Prompt. The value in Step is numeric and represents where the player is in the game. The User Prompt holds the story content and the prompt which are both printed to the screen.
@@ -47,7 +76,7 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 * [GitPod](https://gitpod.io) - Gitpod is an online cloud based IDE. I developed and tested my project using Gitpod. I added and commited changes with messages and pushed to GitHub.
 * [GitHub](https://github.com) - GitHub is a provider of Internet hosting for software development and version control using Git.
 * [Heroku](https://heroku.com) - Heroku is a cloud platform as a service supporting several programming languages. I used Heroku to deploy and run the project.
-* [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game
+* [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game.
 * [Google Sheets](https://www.google.com/sheets/about/) - used to store the story flow, the story content, story prompts and the next steps for the game. 
 * [Diagrams](https://wwww.diagrams.net) - used to create the flowchart for the project.
 
@@ -58,6 +87,8 @@ http://pep8online.com
 ![alt text](assets/images/PEP8-Checker.png)
 
 * No errors were found in the code 
+### Manual Testing
+
 
 ## Deployment
 Deployment
