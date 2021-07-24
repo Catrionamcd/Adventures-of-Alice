@@ -3,7 +3,7 @@
 The Adventures of Alice is a text based adventure game. The game is based on the story of Alice's Adventures in Wonderland and Through the Looking glass by Lewis Carroll. The player is taken through a land of wonder and meets many fantastic creatures along the way. The aim of the game is to find the Vorpal sword and slay the Jabberwocky, a fierce dragon like creature, who along with the Queen of Hearts has control over Wonderland. There is a short introduction to the game and the player is asked to enter their name. The player is asked a series of questions. Depending on how they answer these questions they will go through a series of different adventures and may or may not slay the Jabberwocky and restore order to Wonderland.
 
 
-![alt text](assets/images/Adventures-Screen1.png)
+![alt text](assets/images/Adventures-MultiScreen.png)
 
 ## Design of the game
 ### Flowchart
@@ -11,7 +11,10 @@ The Adventures of Alice is a text based adventure game. The game is based on the
 
 ## Features/Functions
 ### Existing Features
+
 ### Future Features 
+* The game could be extended to hold numerous stories. The player could be presented with a menu of different adventures to play. The different adventure stories could be stored in different Google Sheets.
+* An extra sheet could be updated to store the players name and tally of wins/losses.
 ## Data Model
 
 This game uses Google sheets to store all the data for the game. The Adventures-of-Alice sheet is comprised of two sheets. The AlicePrompt sheet stores two values, Step and User Prompt. The value in Step is numeric and represents where the player is in the game. The User Prompt holds the story content and the prompt which are both printed to the screen.
@@ -22,30 +25,31 @@ The second sheet, AliceFlow, also stores the Step. The Step values should corres
 
 ![alt text](assets/images/Google-Sheet2.png)
 
-The next step can be a numeric value but can also hold a Win or Lose value, which will end the game. The link for a copy of the Adventures Of Alice google sheets is below:
+The next step can be a numeric value but can also hold a Win or Lose value, which will end the game. The link for a copy of the Adventures Of Alice google sheets is here:
 https://docs.google.com/spreadsheets/d/1bUZLqS3Y8-wCncuKFJdtRpnGloQ8lo0SaEltfV9jUIk/edit?usp=sharing
 
 ### Development of Data Model
 
 When I first approached this project and decided to do a text based adventure game I wanted the text and story content to be separate from my Python code. I wanted to store my data separately to be opened, read and manipulated by the code but not hard coded into my program.
 
-I experimented by using a txt file, called story.txt in my gitpod repository. I initially use the open file, readlines, close file code in my program but then after some research discovered linecache.getlines module and used this to read certain lines from the text file depending on where the player was in the story by using parameters of the file name and line number. The code is below:
+I experimented by using a txt file, called story.txt in my gitpod repository. I initially used the open file, readlines, close file code in my program but then after some research discovered linecache.getlines module and used this to read certain lines from the text file depending on where the player was in the story by using parameters of the file name and line number. The code is below:
 
 ![alt text](assets/images/LineCache-Code.png)
 
-After reviewing the love Sandwiches mini project, I felt it may be better to used Google Sheets to store the story line and content. I also realised that  I could also used it to store the valid answers to each player prompt, the output and the next step of the game. Hence, I discarded my original idea of using a text file to store and read in the relevant lines.
+After reviewing the Love Sandwiches mini project, I felt it may be better to used Google Sheets to store the story line and content. I also realised that  I could also used it to store the valid answers to each player prompt, the output and the next step of the game. Hence, I discarded my original idea of using a text file to store and read in the relevant lines and used Google Sheets instead.
 ## Technology
 ### Language Used
 
-* Python3
+* [Python](https://www.python.org) Python is an interpreted high-level general-purpose programming language. I used Python to access the data in Google Sheets and run the game.
 
-### Framework, Libraries, Programs Used
+### Other Technologies and Libraries
 
-* GitPod - Git was used for version control by utilizing the Gitpod terminal to add and commit changes with messages to Git and Push to GitHub.
-* GitHub - used to store the project code.
-* Heroku - used to deploy and run the project.
-* Google Sheets - used to store the story flow, the story content, story prompts and the next steps for the game. 
-* Diagrams - used to create the flowchart for the project.
+* [GitPod](https://gitpod.io) - Gitpod is an online cloud based IDE. I developed and tested my project using Gitpod. I added and commited changes with messages and pushed to GitHub.
+* [GitHub](https://github.com) - GitHub is a provider of Internet hosting for software development and version control using Git.
+* [Heroku](https://heroku.com) - Heroku is a cloud platform as a service supporting several programming languages. I used Heroku to deploy and run the project.
+* [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game
+* [Google Sheets](https://www.google.com/sheets/about/) - used to store the story flow, the story content, story prompts and the next steps for the game. 
+* [Diagrams](https://wwww.diagrams.net) - used to create the flowchart for the project.
 
 ## Testing
 
