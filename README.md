@@ -176,7 +176,7 @@ http://pep8online.com
 
 * Data errors in data model. If there was no entry in the Google Sheets for the next step in the game, the game would just stop. I had to put in a message to alert the player that there was an issue with the data structure and display the step in the game that they had reached.
 
-* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I, therefore, had not activated the API credentials after the site was deployed 
+* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I, therefore, had not added the config var to Heroku. When I did this I still had a problem but relaise that I had not populated my requirments.txt file. Once I did this the game ran without a problem. 
 
 ## Deployment
 
