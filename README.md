@@ -110,10 +110,34 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 * [GitHub](https://github.com) - GitHub is a provider of Internet hosting for software development and version control using Git.
 * [Heroku](https://heroku.com) - Heroku is a cloud platform as a service supporting several programming languages. I used Heroku to deploy and run the project.
 * [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game.
+* [Google Cloud Platform](https://cloud.google.com) - was used to set up the API's for the project.
 * [Google Sheets](https://www.google.com/sheets/about/) - used to store the story flow, the story content, story prompts and the next steps for the game. 
 * [Diagrams](https://wwww.diagrams.net) - used to create the flowchart for the project.
-
 ## API
+Set up API to access the data in the Google Sheets
+
+* Go to the [Google Cloud Platform](https://cloud.google.com) page.
+* Click on 'Select a Project' button.
+* Select 'New Project' and enter project name, 'AdventuresOfAlice' and click 'Create'
+* Select project to bring you to the project page.
+* Select the 'APIs & Services' option from the side menu.
+* Select 'Library' to enable two APIs, Google Drive to get credentials to access the Google files and the second API will be to Google Sheets.
+* In the search bar enter 'Google Drive' and select it from the list.
+* Click the 'Enable' button.
+* From the "Which API are you using?" choose Google Drive API.
+* For the "What data will you be accessing?" select Application Data.
+* For the "Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?" select No, I'm not using them.
+* Click Next
+* Enter Service Account details, 'AdventuresOfAlice' and click 'Create.
+* For Role click 'Editor' and click 'Continue'.
+* On the next page click on the Service Account that was created.
+* On the next page click on 'KEYS' tab.
+* Click on 'Add' key and 'Create New Key'
+* Select 'JSON' and click 'Create'
+* To select the Google Sheets API, go back to the 'Library' and search for 'Google Sheets'.
+* Select 'Google Sheets API' and click 'Enable'.
+
+
 
 ## Testing
 ### Manual Testing
