@@ -121,7 +121,7 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 * Tested all the scenarios
 * Test validation against the reponses in the data model
 * Test that the correct flow happening in the story, the value in next step is moved into the current step.
-* test that the correct prompts are display for the current step
+* Test that the correct prompts are display for the current step
 * Test that the correct output was printing for the current step
 
 
