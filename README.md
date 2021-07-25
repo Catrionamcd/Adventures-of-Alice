@@ -137,6 +137,13 @@ Set up API to access the data in the Google Sheets
 * To select the Google Sheets API, go back to the 'Library' and search for 'Google Sheets'.
 * Select 'Google Sheets API' and click 'Enable'.
 
+## CREDS.JSON
+
+* Copy the credentials file created into my gitpod repository and rename it to 'creds.json'
+* Ensure the 'creds.json' file is added to the 'gitigore' file as it should not be pushed to GitHub.
+* Take a copy the email address generated from the creds.json file.
+* In the Google Sheets click 'Share' button and paste in the email address.
+* Select 'Editor' and untick 'Notify People, then click 'Share'.
 
 
 ## Testing
