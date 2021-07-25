@@ -98,7 +98,7 @@ The code is below:
 
 ![alt text](assets/images/LineCache-Code.png)
 
-After reviewing the Love Sandwiches mini project, I felt it may be better to used Google Sheets to store the story line and content. I also realised that  I could also use it to store the valid answers to each player prompt, the output and the next step of the game. Hence, I discarded my original idea of using a text file to store and read in the relevant lines and used Google Sheets instead.
+After reviewing the Love Sandwiches mini project, I felt it may be better to use Google Sheets to store the story line and content. I also realised that  I could also use it to store the valid answers to each player prompt, the output and the next step of the game. Hence, I discarded my original idea of using a text file to store and read in the relevant lines and used Google Sheets instead.
 ## Technology
 ### Language Used
 
@@ -112,17 +112,21 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 * [Google Chrome Browser](https://www.google.com/intl/en_ie/chrome/) - was used to view the game.
 * [Google Sheets](https://www.google.com/sheets/about/) - used to store the story flow, the story content, story prompts and the next steps for the game. 
 * [Diagrams](https://wwww.diagrams.net) - used to create the flowchart for the project.
+
 ## API
 
 ## Testing
 
-* The google sheets and API is working - able to read in the data from the google sheets.
-* Test the validation of a player name entered 
-* Tested all the scenarios
-* Test validation against the reponses in the data model
-* Test that the correct flow happening in the story, the value in next step is moved into the current step.
-* Test that the correct prompts are display for the current step
-* Test that the correct output was printing for the current step
+* Ensure that API is working and that my code is able to access the data in the google sheets. I initially tested this by putting two rows of data in the google sheet and printing the data to screen.
+* Test the validation of a player name entered. If the player name is not entered, an error message should appear and the user will be prompted for a name again.
+* Test validation against the reponses in the data model. If a response is entered by the player other than the responses in the google sheet an error message should display and the player is prompted again with the same question.
+* Test that the correct story content and prompt is appearing for the current step of the game.
+* Make sure that the correct value in the next step is moved into the current step when the player has entered a valid response for that step.
+* If there is data in the output column ensure that the correct output content is printing.
+* Test if the next step is a 'Win' or 'Lose' step that the correct ouptut is printed to the screen. Also test that the correct accummulated tallies of wins and losses are printed.
+* Ensure that the player is promted to play againif the next step is 'Win' or 'Lose'.
+* If the data in the data structure is not setup properly, ensure that an informative error message should appear with the step of the game printed on screen.
+* Test that the flow of the story makes sense, that for each step the next step is a valid, relaistic move.
 
 
 ### Validator Testing
@@ -138,9 +142,9 @@ http://pep8online.com
 
 * Headings in the data model, had to put in code isnumeric()
 
-* Data errors in data model, next step missing
+* Data errors in data model. If there was no entry in the Google Sheets for the next step in the game, the game would just stop. I had to put in a message to alert the player that there was an issue with the data structure and display the step in the game that they had reached.
 
-* hadnt populated the requirments.txt file in my repository.
+* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I, therefore, had not activated the API credentials
 
 ## Deployment
 
