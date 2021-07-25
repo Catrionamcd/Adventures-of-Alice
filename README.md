@@ -116,17 +116,18 @@ After reviewing the Love Sandwiches mini project, I felt it may be better to use
 ## API
 
 ## Testing
-
+### Manual Testing
 * Ensure that API is working and that my code is able to access the data in the google sheets. I initially tested this by putting two rows of data in the google sheet and printing the data to screen.
 * Test the validation of a player name entered. If the player name is not entered, an error message should appear and the user will be prompted for a name again.
 * Test validation against the reponses in the data model. If a response is entered by the player other than the responses in the google sheet an error message should display and the player is prompted again with the same question.
 * Test that the correct story content and prompt is appearing for the current step of the game.
 * Make sure that the correct value in the next step is moved into the current step when the player has entered a valid response for that step.
 * If there is data in the output column ensure that the correct output content is printing.
-* Test if the next step is a 'Win' or 'Lose' step that the correct ouptut is printed to the screen. Also test that the correct accummulated tallies of wins and losses are printed.
-* Ensure that the player is promted to play againif the next step is 'Win' or 'Lose'.
-* If the data in the data structure is not setup properly, ensure that an informative error message should appear with the step of the game printed on screen.
-* Test that the flow of the story makes sense, that for each step the next step is a valid, relaistic move.
+* If the next step is a 'Win' or 'Lose' step make sure that the correct ouptut is printed to the screen. Also test that the correct accummulated tallies of wins and losses are printed.
+* Ensure that the player is promted to play again if the next step is 'Win' or 'Lose'.
+* If the data in the data structure is not setup properly, ensure that an informative error message should appear with the current step of the game printed on screen.
+* Test that the flow of the story makes sense, that for each step the next step is a valid, realistic move.
+* Used the Google Sheets data as a checklist to test that all of the next steps and outputs were correct and the flow of the game was correct.
 
 
 ### Validator Testing
@@ -136,15 +137,15 @@ http://pep8online.com
 ![alt text](assets/images/PEP8-Checker.png)
 
 * No errors were found in the code 
-### Manual Testing
+
 
 ## Bug Fixes
 
-* Headings in the data model, had to put in code isnumeric()
+* There are headings in the data model of 'Step', 'User Prompt', 'Response' 'Output' and 'Next Step'. Because the first item in the array is a string I was having difficulty in my 'validating user response' function where I wanted to comparison for the step in the game. To sort this problem out I had to put an extra 'if' statement in my loop to check if the first item is numeric by using the isnumeric()method.
 
 * Data errors in data model. If there was no entry in the Google Sheets for the next step in the game, the game would just stop. I had to put in a message to alert the player that there was an issue with the data structure and display the step in the game that they had reached.
 
-* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I, therefore, had not activated the API credentials
+* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I, therefore, had not activated the API credentials after the site was deployed 
 
 ## Deployment
 
