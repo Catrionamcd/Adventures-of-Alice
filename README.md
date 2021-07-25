@@ -172,11 +172,11 @@ http://pep8online.com
 
 ## Bug Fixes
 
-* There are headings in the data model of 'Step', 'User Prompt', 'Response' 'Output' and 'Next Step'. Because the first item in the array is a string I was having difficulty in my 'validating user response' function where I wanted to do a comparison for the step in the game. To sort this problem out I had to put an extra 'if' statement in my loop to check if the first item is numeric by using the isnumeric()method.
+* There are headings in the data model of 'Step', 'User Prompt', 'Response' 'Output' and 'Next Step'. Because the first item in the array is a string I was having difficulty in my 'validating user response' function where I wanted to do a comparison for the step in the game. To sort this problem out I had to put an extra 'if' statement in my loop to check if the first item is numeric by using the isnumeric() method.
 
 * Data errors in data model. If there was no entry in the Google Sheets for the next step in the game, the game would fail. I had to put in a message to alert the player that there was an issue with the data structure and display the step in the game that they had reached.
 
-* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I therefore had not added the config var to Heroku. When I did this I still had a problem but relaised that I had not populated my 'requirments.txt' file in GitPod. Once I did this the game ran without a problem. 
+* When I initially started this game, I was not using Google Sheets to store the data. I deployed my site early to ensure that I understood the deployment process and that it worked properly. I therefore had not added the 'config var' to Heroku. When I added the 'config var' I still had a problem running the game in Heroku. I realised that I had not populated my 'requirments.txt' file in GitPod. Once I did this the game ran without a problem. 
 
 ## Deployment
 
